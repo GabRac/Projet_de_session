@@ -27,6 +27,8 @@ var is_falling = false  # Flag for fall animation
 var acceleration = 10
 
 func _physics_process(delta):
+	$ProgressBar.value += 0.1
+	
 	check_floor_state()
 	process_jump(delta)
 	apply_gravity(delta)
@@ -88,7 +90,6 @@ func update_movement_animation():
 				_animation_player.play(ANIM_RUN)
 				modulate = Color(0,1,1)
 			else:
-				$ProgressBar.value += 0.1
 				_animation_player.play(ANIM_WALK)
 				set_modulate(Color(1,1,1,1))
 		else:

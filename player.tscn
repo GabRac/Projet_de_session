@@ -118,13 +118,14 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
-[sub_resource type="Animation" id="Animation_kxec7"]
-resource_name = "walk"
+[sub_resource type="Animation" id="Animation_lfrul"]
+resource_name = "run"
 length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("walk:frame")
+tracks/0/path = NodePath("run:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -134,14 +135,13 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
-[sub_resource type="Animation" id="Animation_lfrul"]
-resource_name = "run"
+[sub_resource type="Animation" id="Animation_kxec7"]
+resource_name = "walk"
 length = 0.8
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("run:frame")
+tracks/0/path = NodePath("walk:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
