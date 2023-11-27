@@ -45,8 +45,9 @@ func _physics_process(delta: float) -> void:
 		
 		
 func flash() -> void:
-	shader.set_shader_parameter("flash_modifier", 1)
+	shader.set_shader_parameter("flash_modifier", 0.8)
 	flash_timer.start()
+	destroy()
 
 func _on_flash_timer_timeout():
 	shader.set_shader_parameter("flash_modifier", 0)

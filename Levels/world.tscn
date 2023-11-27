@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8q3fxgmslr14"]
+[gd_scene load_steps=7 format=3 uid="uid://c8q3fxgmslr14"]
 
 [ext_resource type="Texture2D" uid="uid://dy3mjtcq3na1f" path="res://Assets/World/Basic Tilemap.png" id="1_spqco"]
 [ext_resource type="PackedScene" uid="uid://dg32p13nqw1wy" path="res://player.tscn" id="2_2jfel"]
@@ -171,6 +171,8 @@ texture = ExtResource("1_spqco")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8jkg1")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5amf"]
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -190,3 +192,10 @@ position = Vector2(365, -22)
 
 [node name="Enemy3" parent="." instance=ExtResource("3_hle4r")]
 position = Vector2(656, -25)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(38, -31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(5, 18)
+shape = SubResource("RectangleShape2D_y5amf")
