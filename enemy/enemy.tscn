@@ -10,7 +10,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tdc1d"]
 resource_local_to_scene = true
 shader = ExtResource("2_j1ipb")
-shader_parameter/flash_color = Color(0.443137, 0, 0, 0)
+shader_parameter/flash_color = Color(1, 0.733333, 0.690196, 0)
 shader_parameter/flash_modifier = 0.0
 
 [sub_resource type="Animation" id="Animation_67t2c"]
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -242,7 +242,6 @@ offsets = PackedFloat32Array(0.5, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [node name="Enemy" type="CharacterBody2D"]
-collision_layer = 2
 script = ExtResource("5")
 
 [node name="PlatformDetector" type="RayCast2D" parent="."]
@@ -295,9 +294,11 @@ color_ramp = SubResource("7")
 
 [node name="Hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3")
+volume_db = -20.0
 
 [node name="Explode" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2")
+volume_db = -20.0
 
 [node name="FlashTimer" type="Timer" parent="."]
 wait_time = 0.5
