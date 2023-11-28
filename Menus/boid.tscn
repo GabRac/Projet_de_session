@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://fwn5ogq52hn8"]
+
+[ext_resource type="Script" path="res://Menus/boid.gd" id="1_rc7ud"]
+[ext_resource type="Texture2D" uid="uid://2fycu0dtr7dh" path="res://Assets/sprites/boid.png" id="2_gc1q2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ybw77"]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_opt6u"]
+radius = 4.0
+height = 10.0
+
+[node name="boid" type="CharacterBody2D" groups=["flock"]]
+position = Vector2(359, 304)
+script = ExtResource("1_rc7ud")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gc1q2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

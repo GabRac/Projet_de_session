@@ -41,7 +41,8 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lce86")
 theme_override_font_sizes/font_size = 48
 text = "YOU WON THE GAME!"
-visible_ratio = -0.0588235
+visible_characters = 0
+visible_ratio = 0.0
 script = ExtResource("2_5evu2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

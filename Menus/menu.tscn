@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcjoxqt15dihd"]
+[gd_scene load_steps=7 format=3 uid="uid://dcjoxqt15dihd"]
 
 [ext_resource type="Theme" uid="uid://dya6ykwne113c" path="res://theme.tres" id="1_p18qk"]
 [ext_resource type="Script" path="res://Menus/menu.gd" id="2_jpmqx"]
+[ext_resource type="Script" path="res://Menus/boid.gd" id="3_pe3mi"]
+[ext_resource type="Texture2D" uid="uid://2fycu0dtr7dh" path="res://Assets/sprites/boid.png" id="4_rrk1d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ybw77"]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_opt6u"]
+radius = 4.0
+height = 10.0
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -59,7 +69,207 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Instructions"
 
+[node name="boids" type="Node" parent="."]
+
+[node name="boid" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[node name="boid2" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid2"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid2/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid2"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[node name="boid3" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid3"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid3/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid3"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[node name="boid4" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid4"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid4/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid4"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[node name="boid5" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid5"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid5/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid5"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[node name="boid6" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid6"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid6/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid6"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[node name="boid7" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid7"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid7/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid7"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[node name="boid8" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid8"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid8/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid8"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[node name="boid9" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid9"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid9/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid9"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[node name="boid10" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid10"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid10/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid10"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
+[node name="boid11" type="CharacterBody2D" parent="boids" groups=["flock"]]
+position = Vector2(359, 304)
+scale = Vector2(2, 2)
+script = ExtResource("3_pe3mi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="boids/boid11"]
+texture = ExtResource("4_rrk1d")
+
+[node name="Area2D" type="Area2D" parent="boids/boid11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid11/Area2D"]
+shape = SubResource("CapsuleShape2D_ybw77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boids/boid11"]
+shape = SubResource("CapsuleShape2D_opt6u")
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/InstructionButton" to="." method="_on_instruction_button_pressed"]
+[connection signal="body_entered" from="boids/boid/Area2D" to="boids/boid" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="boids/boid2/Area2D" to="boids/boid2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="boids/boid3/Area2D" to="boids/boid3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="boids/boid4/Area2D" to="boids/boid4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="boids/boid5/Area2D" to="boids/boid5" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="boids/boid6/Area2D" to="boids/boid6" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="boids/boid7/Area2D" to="boids/boid7" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="boids/boid8/Area2D" to="boids/boid8" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="boids/boid9/Area2D" to="boids/boid9" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="boids/boid10/Area2D" to="boids/boid10" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="boids/boid11/Area2D" to="boids/boid11" method="_on_area_2d_body_entered"]
