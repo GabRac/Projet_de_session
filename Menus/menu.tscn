@@ -72,7 +72,6 @@ text = "Instructions"
 [node name="boids" type="Node" parent="."]
 
 [node name="boid" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
@@ -89,7 +88,6 @@ shape = SubResource("CapsuleShape2D_ybw77")
 shape = SubResource("CapsuleShape2D_opt6u")
 
 [node name="boid2" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
@@ -106,7 +104,6 @@ shape = SubResource("CapsuleShape2D_ybw77")
 shape = SubResource("CapsuleShape2D_opt6u")
 
 [node name="boid3" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
@@ -123,7 +120,6 @@ shape = SubResource("CapsuleShape2D_ybw77")
 shape = SubResource("CapsuleShape2D_opt6u")
 
 [node name="boid4" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
@@ -140,7 +136,6 @@ shape = SubResource("CapsuleShape2D_ybw77")
 shape = SubResource("CapsuleShape2D_opt6u")
 
 [node name="boid5" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
@@ -157,7 +152,6 @@ shape = SubResource("CapsuleShape2D_ybw77")
 shape = SubResource("CapsuleShape2D_opt6u")
 
 [node name="boid6" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
@@ -174,7 +168,6 @@ shape = SubResource("CapsuleShape2D_ybw77")
 shape = SubResource("CapsuleShape2D_opt6u")
 
 [node name="boid7" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
@@ -191,7 +184,6 @@ shape = SubResource("CapsuleShape2D_ybw77")
 shape = SubResource("CapsuleShape2D_opt6u")
 
 [node name="boid8" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
@@ -208,7 +200,6 @@ shape = SubResource("CapsuleShape2D_ybw77")
 shape = SubResource("CapsuleShape2D_opt6u")
 
 [node name="boid9" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
@@ -225,7 +216,6 @@ shape = SubResource("CapsuleShape2D_ybw77")
 shape = SubResource("CapsuleShape2D_opt6u")
 
 [node name="boid10" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
@@ -242,7 +232,6 @@ shape = SubResource("CapsuleShape2D_ybw77")
 shape = SubResource("CapsuleShape2D_opt6u")
 
 [node name="boid11" type="CharacterBody2D" parent="boids" groups=["flock"]]
-position = Vector2(359, 304)
 scale = Vector2(2, 2)
 script = ExtResource("3_pe3mi")
 metadata/_edit_group_ = true
