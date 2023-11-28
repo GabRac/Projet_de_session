@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0ogdfh44strr"]
+
+[ext_resource type="Theme" uid="uid://dya6ykwne113c" path="res://theme.tres" id="1_q63v4"]
+[ext_resource type="Script" path="res://Menus/options.gd" id="2_sirrt"]
+[ext_resource type="PackedScene" uid="uid://dr0ihu51kwt7q" path="res://Menus/volume_slider.tscn" id="3_d16lf"]
+[ext_resource type="AudioStream" uid="uid://bc1fdfw5t40wr" path="res://Menus/audio/song.ogg" id="4_ecxek"]
+[ext_resource type="AudioStream" uid="uid://boqwruowdw6i3" path="res://Menus/audio/switch_on.ogg" id="5_fdkc8"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q63v4")
+script = ExtResource("2_sirrt")
+
+[node name="contents" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="play_sound_effect_btn" type="Button" parent="contents"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Play Sound Effect"
+
+[node name="options" type="PanelContainer" parent="contents"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="contents" type="VBoxContainer" parent="contents/options"]
+layout_mode = 2
+alignment = 1
+
+[node name="master_label" type="Label" parent="contents/options/contents"]
+layout_mode = 2
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="master" parent="contents/options/contents" instance=ExtResource("3_d16lf")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="music_label" type="Label" parent="contents/options/contents"]
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="music" parent="contents/options/contents" instance=ExtResource("3_d16lf")]
+layout_mode = 2
+bus_name = "music"
+
+[node name="sfx_label" type="Label" parent="contents/options/contents"]
+layout_mode = 2
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="sfx" parent="contents/options/contents" instance=ExtResource("3_d16lf")]
+layout_mode = 2
+bus_name = "sfx"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ecxek")
+volume_db = -10.0
+autoplay = true
+bus = &"music"
+
+[node name="sound_effect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fdkc8")
+bus = &"sfx"
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -49.0
+offset_top = -61.0
+offset_right = 49.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Back_to_menu" type="Button" parent="VFlowContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="contents/play_sound_effect_btn" to="." method="_on_play_sound_effect_btn_pressed"]
+[connection signal="pressed" from="VFlowContainer/Back_to_menu" to="." method="_on_back_to_menu_pressed"]

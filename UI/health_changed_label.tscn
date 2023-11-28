@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://UI/health_changed_label.gd" id="1_owamm"]
 
-[sub_resource type="SystemFont" id="SystemFont_6mmah"]
+[sub_resource type="SystemFont" id="SystemFont_fcy0x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xv8sh"]
-font = SubResource("SystemFont_6mmah")
+font = SubResource("SystemFont_fcy0x")
 font_size = 12
 outline_size = 4
 outline_color = Color(0.152941, 0.152941, 0.152941, 1)
@@ -16,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "-10"
 label_settings = SubResource("LabelSettings_xv8sh")
 script = ExtResource("1_owamm")
 float_speed = Vector2(0, -60)

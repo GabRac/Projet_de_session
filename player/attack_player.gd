@@ -15,6 +15,7 @@ func _on_body_entered(body):
 	for child in body.get_children():
 		print("Child:", child)
 		if child is Damageable:
+			$SwordSlashHit.play()
 			child.hit(damage)
 
 func _on_player_facing_direction_changed(facing_right : bool):

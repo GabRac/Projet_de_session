@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bd478yrtijbfn"]
+[gd_scene load_steps=17 format=3 uid="uid://bd478yrtijbfn"]
 
 [ext_resource type="AudioStream" uid="uid://bbxjxs8sms61b" path="res://enemy/explode.wav" id="2"]
-[ext_resource type="Shader" path="res://enemy/blink.gdshader" id="2_j1ipb"]
+[ext_resource type="Shader" path="res://enemy/combined.gdshader" id="2_m7inc"]
 [ext_resource type="AudioStream" uid="uid://brtn51vs7jaet" path="res://enemy/hit.wav" id="3"]
 [ext_resource type="Texture2D" uid="uid://cdy6gikv8wka7" path="res://enemy/enemy.webp" id="4"]
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="5"]
@@ -9,9 +9,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tdc1d"]
 resource_local_to_scene = true
-shader = ExtResource("2_j1ipb")
-shader_parameter/flash_color = Color(1, 0.733333, 0.690196, 0)
+shader = ExtResource("2_m7inc")
+shader_parameter/flash_color = Color(0.956863, 0.74902, 0.737255, 0)
 shader_parameter/flash_modifier = 0.0
+shader_parameter/death_progress = 0.0
+shader_parameter/particle_speed = -1.0
 
 [sub_resource type="Animation" id="Animation_67t2c"]
 length = 0.001
@@ -241,7 +243,11 @@ blend_mode = 1
 offsets = PackedFloat32Array(0.5, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[node name="Enemy" type="CharacterBody2D"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xhqoa"]
+a = Vector2(-60, 0)
+b = Vector2(60, 0)
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("5")
 
 [node name="PlatformDetector" type="RayCast2D" parent="."]
@@ -269,6 +275,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 rotation = -1.5708
 shape = SubResource("5")
 
@@ -295,15 +302,28 @@ color_ramp = SubResource("7")
 [node name="Hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3")
 volume_db = -20.0
+bus = &"sfx"
 
 [node name="Explode" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2")
 volume_db = -20.0
+bus = &"sfx"
 
 [node name="FlashTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 
 [node name="Damageable" type="Node" parent="."]
 script = ExtResource("6_0r60r")
 
+[node name="DeathTimer" type="Timer" parent="Damageable"]
+wait_time = 0.5
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+shape = SubResource("SegmentShape2D_xhqoa")
+
 [connection signal="timeout" from="FlashTimer" to="." method="_on_flash_timer_timeout"]
+[connection signal="timeout" from="Damageable/DeathTimer" to="Damageable" method="_on_death_timer_timeout"]
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]
+[connection signal="body_exited" from="DetectPlayer" to="." method="_on_detect_player_body_exited"]

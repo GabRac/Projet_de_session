@@ -3,10 +3,10 @@ class_name Player
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var base_speed = 150
-var run_speed = 250
+var run_speed = 200
 var current_speed = base_speed
 var UP = Vector2(0, -1)
-var jumpforce = 400
+var jumpforce = 300
 var state_machine
 
 signal facing_direction_changed(facing_right: bool)
@@ -81,7 +81,9 @@ func decrease_stamina(delta):
 
 # Function to handle stamina regeneration when the timer expires
 func _on_stamina_timer_timeout():
-	current_stamina += 15  # Adjust the regeneration rate as needed
+	if current_speed == base_speed:
+		current_stamina += 15  # Adjust the regeneration rate as needed
+		
 	stamina_bar.value = current_stamina
 
 	if current_stamina < max_stamina:
