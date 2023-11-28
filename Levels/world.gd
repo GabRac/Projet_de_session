@@ -24,7 +24,7 @@ func _process(_delta):
 		get_tree().change_scene_to_file("res://Levels/win.tscn")
 		
 		
-	if debug == true:
+	if get_tree().debug_collisions_hint == true:
 		debug_label.show()
 		debug_label.text = "Debug Mode : ON"
 	else:
@@ -43,5 +43,6 @@ func pauseMenu():
 # Toggle debug collisions
 func toggle_debug_collisions(debug):
 	get_tree().set_debug_collisions_hint(debug)
+	get_tree().change_scene_to_file("res://Levels/world.tscn")
 
 	

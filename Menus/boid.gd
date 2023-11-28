@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-var _max_speed: float = 40
+var _max_speed: float = 50
 var _velocity: Vector2 = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
 var _rotation_speed: float = 60
-var _boundary_distance: float = 20
+var _boundary_distance: float = 40
 var _avoidance_distance: float = 200
 var _mouse_avoidance_distance: float = 100  # Adjust this value for mouse avoidance distance
 var _flock_group: String = "flock"
@@ -29,6 +29,8 @@ func _roam(delta: float) -> void:
 	if new_position.x < _boundary_distance or new_position.x > screen_size.x - _boundary_distance or new_position.y < _boundary_distance or new_position.y > screen_size.y - _boundary_distance:
 		_velocity = -_velocity
 		rotation_degrees += 180
+	else:
+		_velocity = _velocity
 
 	# Avoid other boids in the flock group
 	
