@@ -21,21 +21,22 @@ offset_right = 1128.0
 offset_bottom = 610.0
 theme = ExtResource("1_gd66s")
 bbcode_enabled = true
-text = "Controles clavier / souris:						But:
+text = "
+Keyboard/Mouse Controls:						Objective:
 												    
-A: Gauche									Tuer touts les ennemis
+A: Left												Kill all enemies
 											
-D: Droite
+D: Right
 
-Espace: Sauter
+Space: Jump
 
-Clique Gauche: Attaque
+Left Click: Attack
 
-Shift: Courir
+Shift: Run
 
-Debug Mode: F1 (reload la scene manuellement)
+Debug Mode: F1 (manually reload the scene)
 
-Enter: Skip pour scene de fin"
+Enter: Skip end scene"
 fit_content = true
 
 [node name="VFlowContainer" type="VFlowContainer" parent="."]

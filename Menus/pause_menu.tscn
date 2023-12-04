@@ -58,7 +58,7 @@ text = "Resume"
 
 [node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Menu principal"
+text = "Main menu"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

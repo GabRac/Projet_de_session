@@ -31,9 +31,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = -WALK_SPEED
 
 	if is_on_wall():
-		velocity.x = -velocity.x
-
-	move_and_slide()
+		velocity.x = -velocity.x	
 	
 	if velocity.x > 0.0:
 		sprite.scale.x = 1.0
@@ -41,6 +39,9 @@ func _physics_process(delta: float) -> void:
 		sprite.scale.x = -1.0
 
 	update_animation()
+	
+	if (!_state == State.DEAD):
+		move_and_slide()
 
 func chase_player() -> void:
 	if _player:
@@ -68,11 +69,10 @@ func _on_flash_timer_timeout() -> void:
 	flash_timer.stop()
 
 func stop() -> void:
-	velocity = Vector2.ZERO
+	pass
 
 func destroy() -> void:
 	_state = State.DEAD
-	stop()
 
 func get_new_animation() -> StringName:
 	var animation_new: StringName

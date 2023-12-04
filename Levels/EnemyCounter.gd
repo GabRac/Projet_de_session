@@ -18,4 +18,4 @@ func _process(delta):
 	var enemies_killed = total_enemies_to_kill - enemies.size()
 
 	# Mettez à jour le texte du Label avec le nombre d'ennemis tués
-	text = str(enemies_killed) + " / " + str(total_enemies_to_kill) + " tue(s)"
+	text = str(enemies_killed) + " / " + str(total_enemies_to_kill) + " killed"

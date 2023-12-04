@@ -11,8 +11,9 @@ func _process(_delta):
 
 	# Vérifiez si le nombre d'ennemis est égal à 0
 	if enemies.size() == 0:
-		# Si c'est le cas, chargez la scène de victoire (à adapter avec le chemin correct de votre scène)
-		get_tree().change_scene_to_file("res://Levels/win.tscn")
+		print("Door unlocked")
+		# Si c'est le cas, chargez la scène de victoire
+		# get_tree().change_scene_to_file("res://Levels/win.tscn")
 		
 		
 	if Input.is_action_just_pressed("pause"):

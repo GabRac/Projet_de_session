@@ -64,11 +64,11 @@ theme = ExtResource("5_xq71e")
 
 [node name="Restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Redemarrer"
+text = "Restart"
 
 [node name="Menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Menu principal"
+text = "Main menu"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
