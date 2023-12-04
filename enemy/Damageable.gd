@@ -23,6 +23,7 @@ func _ready():
 
 func hit(damage : int):
 	health -= damage
+	enemyRef.receive_knockback(enemyRef.global_position, damage)
 	enemyRef.flash()
 
 	if (health <= 0):

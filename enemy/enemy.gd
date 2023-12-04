@@ -3,6 +3,7 @@ class_name Enemy extends CharacterBody2D
 enum State {
 	WALKING,
 	DEAD,
+	HIT
 }
 
 const WALK_SPEED = 50.0
@@ -20,7 +21,11 @@ var _player = null
 @onready var flash_timer := $FlashTimer as Timer
 @onready var shader = sprite.material as ShaderMaterial
 
+@export var receives_knockback : bool = true
+@export var knockback_modifier : float = 0.1
+
 func _physics_process(delta: float) -> void:
+	
 	chase_player()
 	walk()
 
@@ -40,7 +45,7 @@ func _physics_process(delta: float) -> void:
 
 	update_animation()
 	
-	if (!_state == State.DEAD):
+	if (_state != State.DEAD):
 		move_and_slide()
 
 func chase_player() -> void:
@@ -59,6 +64,14 @@ func update_animation() -> void:
 	var animation := get_new_animation()
 	if animation != animation_player.current_animation:
 		animation_player.play(animation)
+
+func receive_knockback(dmg_src_pos : Vector2, receive_damage : int):
+	if receives_knockback:
+		var knockback_direction = dmg_src_pos.direction_to(self.global_position)
+		var knockback_strength = receive_damage + knockback_modifier
+		var knockback = knockback_direction * knockback_strength
+		
+		global_position += knockback
 
 func flash() -> void:
 	shader.set_shader_parameter("flash_modifier", 0.8)

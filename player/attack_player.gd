@@ -8,12 +8,8 @@ func _ready():
 	player.connect("facing_direction_changed", _on_player_facing_direction_changed)
 	
 
-
 func _on_body_entered(body):
-	print("Body entered:", body)
-	print("Body name:", body.name)
 	for child in body.get_children():
-		print("Child:", child)
 		if child is Damageable:
 			$SwordSlashHit.play()
 			child.hit(damage)

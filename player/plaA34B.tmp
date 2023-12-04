@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://dg32p13nqw1wy"]
+[gd_scene load_steps=110 format=3 uid="uid://dg32p13nqw1wy"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_abokn"]
 [ext_resource type="Script" path="res://player/health_bar.gd" id="2_dbyee"]
@@ -847,13 +847,10 @@ graph_offset = Vector2(37, -67)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s83e1"]
 size = Vector2(16, 11)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6e6p"]
-radius = 6.0
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_abokn")
 
-[node name="health_bar" type="ProgressBar" parent="." node_paths=PackedStringArray("player")]
+[node name="health_bar" type="ProgressBar" parent="."]
 modulate = Color(1, 0, 1, 1)
 self_modulate = Color(1, 0, 0.203922, 1)
 offset_left = -13.0
@@ -865,7 +862,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_jq2ru")
 value = 100.0
 show_percentage = false
 script = ExtResource("2_dbyee")
-player = NodePath("..")
 
 [node name="stamina_bar" type="ProgressBar" parent="."]
 modulate = Color(0.627451, 0.909804, 0.964706, 1)
@@ -876,6 +872,7 @@ offset_bottom = -20.0
 theme_override_styles/background = SubResource("StyleBoxFlat_r8olm")
 theme_override_styles/fill = SubResource("StyleBoxFlat_jq2ru")
 value = 100.0
+rounded = true
 show_percentage = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -936,16 +933,6 @@ grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_hvn85")
 script = ExtResource("3_fcdos")
 
-[node name="hurtBox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_g6e6p")
-
-[node name="hurtTimer" type="Timer" parent="."]
-wait_time = 0.2
-
 [connection signal="body_entered" from="attack_player" to="." method="_on_attack_player_body_entered"]
 [connection signal="body_entered" from="attack_player" to="attack_player" method="_on_body_entered"]
 [connection signal="timeout" from="stamina_timer" to="." method="_on_stamina_timer_timeout"]
-[connection signal="timeout" from="hurtTimer" to="." method="_on_hurt_timer_timeout"]

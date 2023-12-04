@@ -7,7 +7,11 @@ extends Node2D
 
 var paused = false
 var debug = false
-var door_opened = false
+
+
+func _ready():
+	door_area_anim.set_frame(8)
+
 	
 func _process(_delta):
 	# Obtenez la liste des ennemis dans le groupe "Enemies"
@@ -15,10 +19,7 @@ func _process(_delta):
 
 	# Vérifiez si le nombre d'ennemis est égal à 0
 	if enemies.size() == 0:
-		if !door_opened:
-			door_area_anim.play("door_open")
-			door_area.monitoring = true
-			door_opened = true
+		get_tree().change_scene_to_file("res://Levels/win.tscn")
 		
 		
 	if Input.is_action_just_pressed("pause"):
@@ -49,6 +50,6 @@ func pauseMenu():
 # Toggle debug collisions
 func toggle_debug_collisions(debug):
 	get_tree().set_debug_collisions_hint(debug)
-	get_tree().change_scene_to_file("res://Levels/world.tscn")
+	get_tree().change_scene_to_file("res://Levels/level2.tscn")
 
-	
+
