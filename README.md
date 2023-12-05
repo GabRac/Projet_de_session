@@ -10,7 +10,8 @@ Le Platformer 2D que j'ai développé offre une expérience immersive en combina
 #### Raycast pour le Comportement de l'Ennemi
 - **Description du Concept**: L'ennemi utilise un raycast pour détecter les obstacles tels que les murs ou le vide, déterminant ainsi la direction à prendre. Cette approche offre une réactivité accrue de l'ennemi aux changements dans son environnement.
 - **Source de l'Information**: [Répertoire Github Godot](https://github.com/godotengine/godot-demo-projects/tree/master/2d/platformer/enemy)
-- **Capture d'Écran**: ![Raycast en Action](imgs/raycast.png)
+- **Capture d'Écran**:
+![Raycast en Action](imgs/raycast.png)
 
 ---
 
