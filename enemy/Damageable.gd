@@ -6,7 +6,7 @@ var enemySprite : Sprite2D = null
 var spriteMaterial : ShaderMaterial = null
 var enemyRef : Enemy = null
 
-@export var health : float = 20 :
+@export var health : float = 50 :
 	get:
 		return health
 	set(value):
