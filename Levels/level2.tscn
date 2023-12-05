@@ -273,7 +273,6 @@ text = "press E to enter"
 
 [node name="Player" parent="." instance=ExtResource("14_o4acb")]
 position = Vector2(584, 128)
-max_health = 100
 
 [node name="DebugMode" type="Label" parent="Player"]
 offset_left = 50.0

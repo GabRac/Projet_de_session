@@ -40,7 +40,7 @@ func _ready():
 func _physics_process(delta):
 	velocity.y += delta * gravity
 	state_machine = $AnimationTree.get("parameters/playback")
-	# Check for run input
+	# run input
 	if is_on_floor():
 		if Input.is_action_pressed("shift") and current_stamina > 0  and velocity.x != 0:
 			current_speed = run_speed
@@ -110,25 +110,24 @@ func knockback(enemyVelocity: Vector2):
 func attack_player():
 	state_machine.travel("attack")
 
-# Function to decrease stamina over time
+
 func decrease_stamina(delta):
 	current_stamina = clamp(current_stamina - delta * stamina_regeneration_rate, 0, max_stamina)
 	stamina_bar.value = current_stamina
 
 	if current_stamina <= 0:
-		stamina_timer.start()  #d Start a timer when stamina reaches 0
+		stamina_timer.start()
 
-# Function to handle stamina regeneration when the timer expires
 func _on_stamina_timer_timeout():
 	if current_speed == base_speed:
-		current_stamina += 15  # Adjust the regeneration rate as needed
+		current_stamina += 15
 		
 	stamina_bar.value = current_stamina
 
 	if current_stamina < max_stamina:
-		stamina_timer.start()  # Restart the timer if stamina is not yet at the maximum
+		stamina_timer.start()
 	else:
-		stamina_timer.stop()  # Stop the timer when stamina reaches the maximum
+		stamina_timer.stop()
 
 
 
