@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://douy6b0rtqa2b"]
+
+[ext_resource type="Script" path="res://Levels/win.gd" id="1_3kqie"]
+[ext_resource type="Shader" path="res://Levels/gameover.gdshader" id="2_cihbc"]
+[ext_resource type="FontFile" uid="uid://bya75h2pe2afg" path="res://Assets/ThaleahFat.ttf" id="3_pfcn4"]
+[ext_resource type="Script" path="res://Levels/WinLabel.gd" id="4_muise"]
+[ext_resource type="Theme" uid="uid://dya6ykwne113c" path="res://theme.tres" id="5_p7lra"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e8cj4"]
+resource_local_to_scene = true
+shader = ExtResource("2_cihbc")
+shader_parameter/time = 0.0
+shader_parameter/highlight_speed = 1.0
+
+[node name="win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kqie")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.5
+offset_top = -124.0
+offset_right = 181.5
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinLabel" type="Label" parent="BoxContainer"]
+material = SubResource("ShaderMaterial_e8cj4")
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pfcn4")
+theme_override_font_sizes/font_size = 48
+text = "YOU LOST THE GAME... "
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("4_muise")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -111.0
+offset_top = -248.0
+offset_right = 111.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("5_p7lra")
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main menu"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

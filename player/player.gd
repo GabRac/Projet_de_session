@@ -91,7 +91,7 @@ func _physics_process(delta):
 func hurtByEnemy(area):
 	current_health -= 10
 	if current_health < 0:
-		current_health = max_health
+		get_tree().change_scene_to_file("res://Levels/gameover.tscn")
 		
 	isHurt = true
 	healthChanged.emit()
@@ -136,6 +136,6 @@ func _on_hurt_timer_timeout():
 		print(current_health)
 		print(max_stamina)
 		print("test")
-		current_health += 20
+		current_health += 1
 	
 	healthChanged.emit()
