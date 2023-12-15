@@ -62,13 +62,13 @@ Le projet "Bugs Slayer" est un jeu de type Platformer 2D. Il offre aux joueurs u
 ### Conclusion
 
 #### Retour sur le Projet
-- **J’ai Aimé Faire ce Projet, Parce que…** : Il a été une opportunité passionnante d'explorer des concepts avancés de développement de jeux. La combinaison de l'intelligence des ennemis et jusqu'à la créer une machine à états.
+- **J’ai Aimé Faire ce Projet, Parce que…** : Il a été une opportunité passionnante d'explorer des concepts avancés de développement de jeux. La combinaison de l'intelligence des ennemis et jusqu'à créer une machine à états.
 
 #### Les Éléments que Vous Auriez Aimé Explorer
 - J'aurais aimé explorer davantage les mécanismes de génération procédurale pour une variété accrue des environnements. La diversité des niveaux aurait pu être étendue pour offrir une expérience de jeu encore plus riche.
 
 #### J’aurais Aimé Aller Plus Loin dans le Projet
-- Ajouter un système de dialogue entre les personnages et des quêtes aurait été une extension intéressante. Cela aurait apporté une dimension narrative plus profonde et engagé davantage les joueurs.
+- Ajouter un système de dialogue et des quêtes aurait été une extension intéressante. Cela aurait apporté une dimension narrative plus profonde et engagé davantage les joueurs.
 
 #### J’ai Bien Aimé Faire Mon Projet, Je N’Aurais Pas Changé de Sujet…
 - Le projet a vraiment été une expérience géniale, et je ne regrette pas du tout mon choix. Bugs Slayer a été une aventure de développement vraiment stimulante, mêlant créativité, programmation avancée, et résolution de problèmes.
