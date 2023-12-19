@@ -18,8 +18,8 @@ Le projet "Bugs Slayer" est un jeu de type Platformer 2D. Il offre aux joueurs u
 
 ---
 
-#### Shaders pour l'Ennemi et le Texte de la Scène Win
-- **Description du Concept**: L'ennemi est doté de shaders combinés pour créer des effets visuels uniques. De plus, un shader spécifique est appliqué au texte de la scène Win, ajoutant une esthétique particulière à la victoire du joueur.
+#### Shaders pour l'Ennemi et le Texte de la Scène Win / GameOver
+- **Description du Concept**: L'ennemi est doté de shaders combinés pour créer des effets visuels uniques. De plus, un shader spécifique est appliqué au texte de la scène Win et GameOver, ajoutant une esthétique particulière à la victoire ou la défaite du joueur.
 - **Comparaison avec Différentes Méthodes:** Les shaders offrent une flexibilité artistique, mais d'autres approches pourraient impliquer des animations traditionnelles.
 - **Avantages et Inconvénients:** Avantage - Esthétique personnalisée ; Inconvénient - Courbe d'apprentissage pour les shaders.
 - **Source de l'Information**: [Introduction aux Shaders](https://github.com/nbourre/0sw_notes_cours/tree/main/shaders)
@@ -61,13 +61,13 @@ Le projet "Bugs Slayer" est un jeu de type Platformer 2D. Il offre aux joueurs u
 
 ### Conclusion
 
-#### Retour sur le Projet
-- **J’ai Aimé Faire ce Projet, Parce que…** : Il a été une opportunité passionnante d'explorer des concepts avancés de développement de jeux. La combinaison de l'intelligence des ennemis et jusqu'à créer une machine à états.
+#### Retour sur le projet
+- **J’ai aimé faire ce projet, Parce que…** : Il a été une opportunité passionnante d'explorer des concepts avancés de développement de jeux. La combinaison de l'intelligence des ennemis et jusqu'à créer une machine à états.
 
-#### Les Éléments que Vous Auriez Aimé Explorer
+#### Les éléments que vous auriez aimé explorer
 - J'aurais aimé explorer davantage les mécanismes de génération procédurale pour une variété accrue des environnements. La diversité des niveaux aurait pu être étendue pour offrir une expérience de jeu encore plus riche.
 
-#### J’aurais Aimé Aller Plus Loin dans le Projet
+#### J’aurais aimé aller plus loin dans le projet
 - Ajouter un système de dialogue et des quêtes aurait été une extension intéressante. Cela aurait apporté une dimension narrative plus profonde et engagé davantage les joueurs.
 
 #### J’ai Bien Aimé Faire Mon Projet, Je N’Aurais Pas Changé de Sujet…
